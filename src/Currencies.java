@@ -10,6 +10,7 @@ abstract class Currency {
     double convertFromDollar(double amount){
         return amount / rateToDollar;
     }
+
     public String getNickname() {
         return nickname;
     }

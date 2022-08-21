@@ -28,9 +28,13 @@ public class Function {
     }
 
     public void getAmount(){
-        this.inputAmount = JOptionPane.showInputDialog(null,
-                "Enter amount of " + sourceCurrency.getNickname() + " to convert: ",
-                sourceCurrency.getNickname() + " Converter", JOptionPane.PLAIN_MESSAGE);
+        try {
+            this.inputAmount = JOptionPane.showInputDialog(null,
+                    "Enter amount of " + sourceCurrency.getNickname() + " to convert: ",
+                    sourceCurrency.getNickname() + " Converter", JOptionPane.PLAIN_MESSAGE);
+        } catch (NullPointerException e) {
+            System.exit(0);
+        }
     }
 
     public boolean inputIsValid() {

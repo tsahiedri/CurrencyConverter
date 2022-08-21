@@ -8,6 +8,7 @@ public class Runner {
         while(true) {
 
             f.selectSourceCurrency();
+
             f.getAmount();
 
             if(f.inputIsValid()){
