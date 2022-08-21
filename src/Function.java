@@ -1,12 +1,22 @@
 import javax.swing.*;
 
 public class Function {
-    public void dollarToILS(double input){
-        double ILS = input * 3.28;
-        JOptionPane.showConfirmDialog(null, "Amount of ILS: " + ILS + "₪");
+
+    public boolean inputIsValid(String input) {
+        try{
+            double x = Double.parseDouble(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
-    public void dollarToGBP(double input){
-        double GBP = input * 0.85;
-        JOptionPane.showConfirmDialog(null, "Amount of GBP: " + GBP + "£");
+
+    public void dollarToILS(double amountToConvert){
+        double ILS = amountToConvert * 3.28;
+        JOptionPane.showMessageDialog(null, "Amount of ILS: " + ILS + "₪");
+    }
+    public void dollarToGBP(double amountToConvert){
+        double GBP = amountToConvert * 0.85;
+        JOptionPane.showMessageDialog(null, "Amount of GBP: " + GBP + "£");
     }
 }
